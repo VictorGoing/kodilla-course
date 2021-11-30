@@ -37,10 +37,11 @@ public class CollectionTestSuite {
         numbers.add(6);
         numbers.add(7);
         OddNumbersExterminator object = new OddNumbersExterminator();
-        int lenght = object.exterminate(numbers).size();
+        List<Integer> array = new ArrayList<>();
+        array.add(2);
+        array.add(4);
+        array.add(6);
 
-
-        Integer[] table = object.exterminate(numbers).toArray(new Integer[lenght]);
-        Assertions.assertArrayEquals(new Integer[] {2,4,6},table);
+        Assertions.assertEquals(array,object.exterminate(numbers));
     }
 }
