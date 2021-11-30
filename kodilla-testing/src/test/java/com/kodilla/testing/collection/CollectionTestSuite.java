@@ -23,7 +23,7 @@ public class CollectionTestSuite {
         List<Integer> numbers = new ArrayList<>();
         OddNumbersExterminator object = new OddNumbersExterminator();
 
-        Assertions.assertArrayEquals(new Integer[]{}, object.exterminate(numbers).toArray());
+        Assertions.assertEquals(new ArrayList<>(), object.exterminate(numbers));
     }
     @DisplayName("Test Odd Numbers Exterminator Normal List")
     @Test
