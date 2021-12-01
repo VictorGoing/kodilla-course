@@ -11,35 +11,36 @@ public class    ShapeCollectorTestSuite {
     @Test
     void testAddFigure(){
         Circle circle = new Circle(2.5);
-        ShapeColletor colletor = new ShapeColletor();
+        ShapeColletor collector = new ShapeColletor();
         List<Shape> shapeList = new ArrayList<>();
         shapeList.add(circle);
-        colletor.addFigure(circle);
+        collector.addFigure(circle);
 
-        Assertions.assertEquals(shapeList,colletor.getCollection());
+        Assertions.assertEquals(shapeList,collector.collection);
     }
 
     @Test
     void testRemoveFigure(){
         Circle circle = new Circle(2.5);
+
+        ShapeColletor collector = new ShapeColletor();
         List<Shape> shapeList = new ArrayList<>();
-        ShapeColletor colletor = new ShapeColletor();
 
-        colletor.removeFigure(circle);
+        collector.collection.add(circle);
+        collector.removeFigure(circle);
 
-        Assertions.assertEquals(shapeList,colletor.getCollection());
-
+        Assertions.assertEquals(shapeList,collector.collection);
 
     }
 
     @Test
     void testGetFigure(){
         Circle circle = new Circle(2.5);
-        ShapeColletor colletor = new ShapeColletor();
+        ShapeColletor collector = new ShapeColletor();
 
-        colletor.addFigure(circle);
+        collector.collection.add(circle);
 
-        Assertions.assertEquals(circle,colletor.getFigure(0));
+        Assertions.assertEquals(circle,collector.getFigure(0));
     }
 
 }
