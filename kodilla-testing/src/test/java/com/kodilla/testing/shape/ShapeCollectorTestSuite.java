@@ -12,12 +12,12 @@ public class    ShapeCollectorTestSuite {
     void testAddFigure(){
         Circle circle = new Circle(2.5);
         ShapeColletor collector = new ShapeColletor();
-        List<Shape> shapeList = new ArrayList<>();
-        shapeList.add(circle);
+
         collector.addFigure(circle);
 
-        Assertions.assertEquals(shapeList,collector.collection);
+        Assertions.assertEquals(circle,collector.getFigure(0));
     }
+
 
     @Test
     void testRemoveFigure(){
@@ -26,10 +26,10 @@ public class    ShapeCollectorTestSuite {
         ShapeColletor collector = new ShapeColletor();
         List<Shape> shapeList = new ArrayList<>();
 
-        collector.collection.add(circle);
+        collector.addFigure(circle);
         collector.removeFigure(circle);
 
-        Assertions.assertEquals(shapeList,collector.collection);
+        Assertions.assertEquals(circle,collector.getFigure(0));
 
     }
 
@@ -38,7 +38,7 @@ public class    ShapeCollectorTestSuite {
         Circle circle = new Circle(2.5);
         ShapeColletor collector = new ShapeColletor();
 
-        collector.collection.add(circle);
+        collector.addFigure(circle);
 
         Assertions.assertEquals(circle,collector.getFigure(0));
     }
