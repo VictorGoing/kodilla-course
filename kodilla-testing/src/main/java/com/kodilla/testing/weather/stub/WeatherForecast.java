@@ -1,10 +1,7 @@
 package com.kodilla.testing.weather.stub;
 
 import java.beans.PropertyEditorSupport;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class WeatherForecast {
     private Temperatures temperatures;
@@ -36,11 +33,22 @@ public class WeatherForecast {
         return result;
     }
     public Double medianTemperatures(){
-        Double result = 0.00;
-        for(Map.Entry<String, Double> temperature : this.temperatures.getTemperatures().entrySet()){
-            result += temperature.getValue();
+        Double result = 0.00; //parzyście nieparzyście i posortować(collection.sorted)
+        List<Double> list = new LinkedList<>();
+        for (Map.Entry<String, Double> entry : this.temperatures.getTemperatures().entrySet()){
+            list.add(entry.getValue());
         }
-        return 23.22;
+        Collections.sort(list);
+        if(this.temperatures.getTemperatures().size() % 2 != 0){
+            int finalIndex = ((list.size() + 1)/2) - 1;
+            return list.get(finalIndex);
+        }
+        else{
+            double med1 = list.get(list.size()/2-1);
+            double med2 = list.get((list.size()/2));
+            double mean = (med1 + med2)/2;
+            return mean;
+        }
     }
 
 }

@@ -26,7 +26,7 @@ public class ForumStatsTestSuite {
     @Test
     void testCalculateAdvStatisticsPosts0(){
         ForumStats forumStats = new ForumStats();
-        List<String> usersNameList = new ArrayList<String>();
+        List<String> usersNameList = new ArrayList<>();
 
 
         when(statisticsMock.postsCount()).thenReturn(0);
@@ -41,7 +41,7 @@ public class ForumStatsTestSuite {
     @Test
     void calculateAdvStatisticsTestPosts1000(){
         ForumStats forumStats = new ForumStats();
-        List<String> usersNameList = new ArrayList<String>();
+        List<String> usersNameList = new ArrayList<>();
 
 
         when(statisticsMock.postsCount()).thenReturn(1000);
@@ -57,7 +57,7 @@ public class ForumStatsTestSuite {
     @Test
     void calculateAdvStatisticsTestComments0(){
         ForumStats forumStats = new ForumStats();
-        List<String> usersNameList = new ArrayList<String>();
+        List<String> usersNameList = new ArrayList<>();
 
 
         when(statisticsMock.postsCount()).thenReturn(10);
@@ -73,7 +73,7 @@ public class ForumStatsTestSuite {
     @Test
     void calculateAdvStatisticsTestPostsMoreThanComments(){
         ForumStats forumStats = new ForumStats();
-        List<String> usersNameList = new ArrayList<String>();
+        List<String> usersNameList = new ArrayList<>();
 
 
         when(statisticsMock.postsCount()).thenReturn(10);
@@ -89,7 +89,7 @@ public class ForumStatsTestSuite {
     @Test
     void calculateAdvStatisticsTestCommentsMoreThanPosts(){
         ForumStats forumStats = new ForumStats();
-        List<String> usersNameList = new ArrayList<String>();
+        List<String> usersNameList = new ArrayList<>();
 
 
         when(statisticsMock.postsCount()).thenReturn(10);
@@ -105,7 +105,7 @@ public class ForumStatsTestSuite {
     @Test
     void calculateAdvStatisticsTestUsers0(){
         ForumStats forumStats = new ForumStats();
-        List<String> usersNameList = new ArrayList<String>();
+        List<String> usersNameList = new ArrayList<>();
 
 
         when(statisticsMock.postsCount()).thenReturn(10);
@@ -121,7 +121,7 @@ public class ForumStatsTestSuite {
     @Test
     void calculateAdvStatisticsTestUsers100(){
         ForumStats forumStats = new ForumStats();
-        List<String> usersNameList = new ArrayList<String>();
+        List<String> usersNameList = new ArrayList<>();
         for(int i = 0; i <100 ; i++){
             usersNameList.add("user");
         }

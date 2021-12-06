@@ -55,14 +55,14 @@ class WeatherForecastTestSuite {
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
-        Double mean = (a + b + c + d + e)/temperaturesMap.size();
 
 
-        Assertions.assertEquals(mean, weatherForecast.meanTemperatures(),0.01);
+
+        Assertions.assertEquals(23.00, weatherForecast.meanTemperatures(),0.01);
     }
 
     @Test
-    void testMedianTemperaturesWithMock() {
+    void testMedianTemperaturesWithMock1() {
 
         Double a = 21.03;
         Double b = 23.43;
@@ -81,6 +81,27 @@ class WeatherForecastTestSuite {
 
 
 
-        Assertions.assertEquals(e ,weatherForecast.medianTemperatures());
+        Assertions.assertEquals(23.22 ,weatherForecast.medianTemperatures());
+    }
+
+    @Test
+    void testMedianTemperaturesWithMock2() {
+
+        Double a = 21.03;
+        Double b = 23.43;
+        Double c = 25.42;
+        Double d = 21.92;
+        Map<String, Double> temperaturesMap = new HashMap<>();
+        temperaturesMap.put("Rzeszow", a);
+        temperaturesMap.put("Krakow", b);
+        temperaturesMap.put("Wroclaw", c);
+        temperaturesMap.put("Warszawa", d);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
+
+
+
+
+        Assertions.assertEquals(22.67 ,weatherForecast.medianTemperatures(),0.01);
     }
 }

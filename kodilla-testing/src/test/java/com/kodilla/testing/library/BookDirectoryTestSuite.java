@@ -101,12 +101,12 @@ class BookDirectoryTestSuite {
         List<Book> booksInHandsOf0 = new ArrayList<Book>();
 
 
-        //when(bookLibrary.)
+        when(libraryDatabaseMock.listBooksInHandsOf(user0)).thenReturn(booksInHandsOf0);
         // When
         List<Book> theListOfBookInHandsOf = bookLibrary.listBooksInHandsOf(user0);
 
         // Then
-        assertEquals(booksInHandsOf0.size(), theListOfBookInHandsOf.size());
+        assertEquals(0 , theListOfBookInHandsOf.size());
 
     }
     @Test
@@ -118,7 +118,7 @@ class BookDirectoryTestSuite {
         booksInHandsOf1.add(new Book("1","1",1));
 
 
-        assertEquals(booksInHandsOf1.size(), bookLibrary.listBooksInHandsOf(user1).size());
+        assertEquals(1, bookLibrary.listBooksInHandsOf(user1).size());
     }
 
 
