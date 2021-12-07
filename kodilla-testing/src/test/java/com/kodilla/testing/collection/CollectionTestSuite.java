@@ -25,7 +25,7 @@ public class CollectionTestSuite {
 
         Assertions.assertEquals(new ArrayList<>(), object.exterminate(numbers));
     }
-    @DisplayName("Test Odd Numbers Exterminator Normal List")
+   /* @DisplayName("Test Odd Numbers Exterminator Normal List")
     @Test
     void testOddNumbersExterminatorNormalList(){
         List<Integer> numbers = new ArrayList<>();
@@ -43,5 +43,5 @@ public class CollectionTestSuite {
         array.add(6);
 
         Assertions.assertEquals(array,object.exterminate(numbers));
-    }
+    }*/
 }
