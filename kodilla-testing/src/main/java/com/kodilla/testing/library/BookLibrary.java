@@ -11,15 +11,11 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
-        List<Book> bookList = new ArrayList<>();
-        List<Book> resultList = libraryDatabase.listBooksInHandsOf(libraryUser);
-
-        Book book = new Book("Title","Author",1998);
-        return bookList;
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 
     public List<Book> listBooksWithCondition(String titleFragment) {
-        List<Book> bookList = new ArrayList<Book>();
+        List<Book> bookList = new ArrayList<>();
         if (titleFragment.length() < 3) return bookList;
         List<Book> resultList = libraryDatabase
                 .listBooksWithCondition(titleFragment);

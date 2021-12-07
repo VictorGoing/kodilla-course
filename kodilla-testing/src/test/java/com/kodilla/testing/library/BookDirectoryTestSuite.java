@@ -71,7 +71,7 @@ class BookDirectoryTestSuite {
 
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);                  // [1]
-        List<Book> resultListOf0Books = new ArrayList<Book>();                           // [2]
+        List<Book> resultListOf0Books = new ArrayList<>();                           // [2]
         List<Book> resultListOf15Books = generateListOfNBooks(15);                       // [3]
         List<Book> resultListOf40Books = generateListOfNBooks(40);                       // [4]
         when(libraryDatabaseMock.listBooksWithCondition(anyString()))                    // [5]
@@ -98,7 +98,7 @@ class BookDirectoryTestSuite {
         // Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser user0 = new LibraryUser("Name0","LastName0", "012345678910");
-        List<Book> booksInHandsOf0 = new ArrayList<Book>();
+        List<Book> booksInHandsOf0 = new ArrayList<>();
 
 
         when(libraryDatabaseMock.listBooksInHandsOf(user0)).thenReturn(booksInHandsOf0);
@@ -114,9 +114,9 @@ class BookDirectoryTestSuite {
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser user1 = new LibraryUser("Name1","LastName1", "112345678910");
 
-        List<Book> booksInHandsOf1 = new ArrayList<Book>();
+        List<Book> booksInHandsOf1 = new ArrayList<>();
         booksInHandsOf1.add(new Book("1","1",1));
-
+        when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(booksInHandsOf1);
 
         assertEquals(1, bookLibrary.listBooksInHandsOf(user1).size());
     }
@@ -126,14 +126,14 @@ class BookDirectoryTestSuite {
     void testListBooksInHandsOf5() {
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser user5 = new LibraryUser("Name5","LastName5", "512345678910");
-        List<Book> booksInHandsOf5 = new ArrayList<Book>();
+        List<Book> booksInHandsOf5 = new ArrayList<>();
         booksInHandsOf5.add(new Book("5.1","5.1",51));
         booksInHandsOf5.add(new Book("5.2","5.2",52));
         booksInHandsOf5.add(new Book("5.3","5.3",53));
         booksInHandsOf5.add(new Book("5.4","5.4",54));
         booksInHandsOf5.add(new Book("5.5","5.5",55));
+        when(libraryDatabaseMock.listBooksInHandsOf(user5)).thenReturn(booksInHandsOf5);
 
-
-        assertEquals(booksInHandsOf5.size(), bookLibrary.listBooksInHandsOf(user5).size());
+        assertEquals(5, bookLibrary.listBooksInHandsOf(user5).size());
     }
 }
