@@ -90,16 +90,16 @@ class BoardTestSuite {
 
         long daysQuantity = project.getTaskLists().stream()
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(tl -> Duration.between(tl.getDeadline(), tl.getCreated()).toDays())
+                .map(tl -> tl.getDeadline().toEpochDay() - tl.getCreated().toEpochDay())
                 .mapToInt(Long::intValue)
                 .sum();
 
         System.out.println(daysQuantity);
         System.out.println(taskQuantity);
 
-        //double average = (double)daysQuantity/taskQuantity;
+        double average = (double)daysQuantity/taskQuantity;
 
-        //Assertions.assertEquals(27.8,average,0.01);
+        Assertions.assertEquals(27.8,average,0.01);
     }
 
     private Board prepareTestData() {
