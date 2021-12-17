@@ -23,7 +23,9 @@ public class StreamMain {
 
     public static void main(String[] args) {
 
-        List<ForumUser> forumUsers = new ArrayList<>();
+
+
+        /*List<ForumUser> forumUsers = new ArrayList<>();
         forumUsers.add(new ForumUser(1,"Marek",'M', LocalDate.of(2000,7,3),0));
         forumUsers.add(new ForumUser(2,"Rafał",'M', LocalDate.of(2002,2,2),2));
         forumUsers.add(new ForumUser(3,"Ania",'W', LocalDate.of(1990,3,5),3));
@@ -42,7 +44,7 @@ public class StreamMain {
         System.out.println("# entrys: " + theFinalList.size());
         theFinalList.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
 
 
         /*BookDirectory theBookDirectory = new BookDirectory();
@@ -102,14 +104,14 @@ public class StreamMain {
         poemBeautifier.beautify(string,(text) ->  string + " ( ͡° ͜ʖ ͡°) ");*/
 
 
-        /*System.out.println("Welcome to module 7 – Stream");
+        System.out.println("Welcome to module 7 – Stream");
 
         SaySomething saySomething = new SaySomething();
-        saySomething.say();*/
+        saySomething.say();
 
-        /*Processor processor = new Processor();
+        Processor processor = new Processor();
         ExecuteSaySomething executeSaySomething = new ExecuteSaySomething();
-        processor.execute(executeSaySomething);*/
+        processor.execute(executeSaySomething);
 
         /*
         Processor processor = new Processor();
