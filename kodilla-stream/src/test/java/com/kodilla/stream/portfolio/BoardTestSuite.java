@@ -95,12 +95,9 @@ class BoardTestSuite {
         long daysQuantity = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(tl -> tl.getDeadline().toEpochDay() - tl.getCreated().toEpochDay())
+                .map(tl -> LocalDate.now().toEpochDay() - tl.getCreated().toEpochDay())
                 .mapToInt(Long::intValue)
                 .sum();
-
-        System.out.println(daysQuantity);
-        System.out.println(taskQuantity);
 
         double average = (double)daysQuantity/taskQuantity;
 
