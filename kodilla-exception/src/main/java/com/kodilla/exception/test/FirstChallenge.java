@@ -11,6 +11,7 @@ public class FirstChallenge {
         } catch (ArithmeticException e) {
             result = Double.NaN;
         } finally {
+            //noinspection ReturnInsideFinallyBlock
             return result;
         }
     }
