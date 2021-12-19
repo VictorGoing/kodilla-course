@@ -84,11 +84,16 @@ class BoardTestSuite {
     void testAddTaskListAverageWorkingOnTask(){
         Board project = prepareTestData();
 
+        List<TaskList> inProgressTasks = new ArrayList<>();               // [1]
+        inProgressTasks.add(new TaskList("In progress"));
+
         long taskQuantity = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .count();
 
         long daysQuantity = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(tl -> tl.getDeadline().toEpochDay() - tl.getCreated().toEpochDay())
                 .mapToInt(Long::intValue)
@@ -99,7 +104,7 @@ class BoardTestSuite {
 
         double average = (double)daysQuantity/taskQuantity;
 
-        Assertions.assertEquals(27.8,average,0.01);
+        Assertions.assertEquals(10,average,0.01);
     }
 
     private Board prepareTestData() {
