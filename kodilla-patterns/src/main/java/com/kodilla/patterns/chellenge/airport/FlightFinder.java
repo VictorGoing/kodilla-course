@@ -9,8 +9,8 @@ public class FlightFinder {
     private HashSet<Flight> flights;
 
 
-    public FlightFinder() {
-        this.flights = new HashSet<>();
+    public FlightFinder(HashSet<Flight> flights) {
+        this.flights = flights;
     }
 
     public List<Flight> findFrom(String city){
