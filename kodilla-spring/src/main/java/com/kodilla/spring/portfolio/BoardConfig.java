@@ -18,13 +18,40 @@ public class BoardConfig {
 
     @Lazy
     @Autowired
-    @Qualifier("board1")
-    Board board;
+    @Qualifier("todo")
+    TaskList todo;
 
-    @Bean(name = "board1")
+    @Lazy
+    @Autowired
+    @Qualifier("todo")
+    TaskList inpro;
+
+    @Lazy
+    @Autowired
+    @Qualifier("todo")
+    TaskList done;
+
+    @Bean(name = "todo")
     @Scope("prototype")
+    TaskList getTodo(){
+        return new TaskList();
+    }
+
+    @Bean(name = "inpro")
+    @Scope("prototype")
+    TaskList getInPro(){
+        return new TaskList();
+    }
+
+    @Bean(name = "done")
+    @Scope("prototype")
+    TaskList getDone(){
+        return new TaskList();
+    }
+
+    @Bean
     public Board getBoardOne(){
-        return new Board(new TaskList(),new TaskList(),new TaskList());
+        return new Board(todo,inpro,done);
     }
 
 }
