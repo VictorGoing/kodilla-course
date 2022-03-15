@@ -1,0 +1,77 @@
+CREATE TABLE ISSUESLISTS(
+    ID SERIAL PRIMARY KEY ,
+    NAME VARCHAR(100)
+);
+
+CREATE TABLE ISSUES(
+    ID SERIAL PRIMARY KEY ,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(500),
+    DESCRIPTION VARCHAR(1000),
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUESLISTS_ID) REFERENCES ISSUESLISTS (ID),
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS (ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME) VALUE ("ToDo");
+
+INSERT INTO ISSUESLISTS (NAME) VALUE ("In progress");
+
+INSERT INTO ISSUESLISTS (NAME) VALUE ("Done");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+    1, "Zmyj naczynia", "Zmyj wszystkie naczynia w zlewie.",1
+    );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+    2, "Zmyj podłogę", "Zmyj podłogę w całym domu.",2
+    );
+    INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+        3, "Przetrzyj półki", "Zetrzyj kurz z półek w całym domu.",3
+        );
+
+    INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+        1, "Wyrzuć śmieci", "Wyrzuć śmieci do kontenera za blokiem.",4
+        );
+
+    INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+        1, "Wyprowadź psa", "Wyjdź z psem na spacer na 30 minut",5
+        );
+
+    INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+        1, "Kup bilety", "Kup bilety na pociąg",2
+        );
+
+    INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+        1, "Zrób zakupy", "Zrób zakupy w super markecie ",1
+        );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+                    2, "Skoś trawę", "Skoś trawę na całym podwórku",5
+                    );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+                    2, "Zrób obiad", "Ugotuj obiad dla wszystkich",4
+                    );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+                    2, "Zrób pranie", "Wstaw pranie kolorowych ubrań",4
+                    );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+                    2, "Rozwieś pranie", "Rozwieś pranie na suszarce",4
+                    );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+                    3, "Zarejestruj się", "Zarejestruj się do lekarza",2
+                    );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+                    3, "Weź leki", "Zarzyj leki przepisane od lekarza",3
+                    );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+                    3, "Idź na trening", "Idź na siłownie",3
+                    );
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO) VALUE (
+                    3, "Odkurz ", "Odkurz cały dom",2
+                    );
+COMMIT;
+
+
+
+
+
+
