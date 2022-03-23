@@ -1,11 +1,19 @@
 package com.kodilla.hibernate.manytomany;
 
+import com.kodilla.hibernate.task.Task;
 import org.hibernate.cfg.annotations.ListBinder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyWhoseStartsThisLetters",
+        query = "SELECT COMPANY_NAME FROM COMPANIES" +
+                " WHERE COMPANY_NAME LIKE :LETTERS",
+        resultClass = Company.class
+)
 
 @Entity
 @Table(name = "COMPANIES")
