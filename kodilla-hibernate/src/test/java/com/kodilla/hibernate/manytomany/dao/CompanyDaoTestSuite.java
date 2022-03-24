@@ -105,10 +105,10 @@ class CompanyDaoTestSuite {
 
         List<Employee> lastnames = employeeDao.retrieveEmployeesWithThatLastname("Smith");
 
-        //List<String> companies = companyDao.retrieveCompanyWhoseStartsThisLetters("Dat");
+        List<String> companies = companyDao.retrieveCompanyWhoseStartsThisLetters("Dat");
 
         assertEquals(1,lastnames.size());
-        //assertEquals(1,companies.size());
+        assertEquals(1,companies.size());
 
         try {
             companyDao.deleteById(softwareMachineId);

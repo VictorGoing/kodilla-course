@@ -11,7 +11,7 @@ import java.util.List;
 @NamedNativeQuery(
         name = "Company.retrieveCompanyWhoseStartsThisLetters",
         query = "SELECT COMPANY_NAME FROM COMPANIES" +
-                " WHERE COMPANY_NAME LIKE :LETTERS",
+                " WHERE LEFT(COMPANY_NAME,3) = LEFT(:LETTERS,3)",
         resultClass = Company.class
 )
 
