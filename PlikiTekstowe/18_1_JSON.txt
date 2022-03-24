@@ -1,0 +1,23 @@
+{
+    "carName":"500",
+    "carMark":"Fiat",
+    "armchairs":[
+        {
+            "material":"leather",
+            "color":"black"
+        },
+        {
+            "material":"leather",
+            "color":"black"
+        },
+        {
+            "material":"leather",
+            "color":"black"
+        },
+        {
+            "material":"leather",
+            "color":"black"
+        }
+    ],
+    "engineCapacity":2.40
+}
