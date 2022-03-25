@@ -10,7 +10,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveCompanyWhoseStartsThisLetters",
-        query = "SELECT COMPANY_NAME FROM COMPANIES" +
+        query = "SELECT * FROM COMPANIES" +
                 " WHERE LEFT(COMPANY_NAME,3) = :LETTERS",
         resultClass = Company.class
 )
