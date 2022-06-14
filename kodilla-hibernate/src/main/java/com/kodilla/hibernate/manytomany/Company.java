@@ -14,6 +14,11 @@ import java.util.List;
                 " WHERE LEFT(COMPANY_NAME,3) = :LETTERS",
         resultClass = Company.class
 )
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyWhoseHaveLettersInName",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%',:LETTERS,'%')",
+        resultClass = Company.class
+)
 
 @Entity
 @Table(name = "COMPANIES")
